@@ -11,28 +11,64 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar( // NAVBAR DE LA APLICACIÓN
-          title: Text("Hola Mundo"),
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          // This is the theme of your application.
+          //
+          // Try running your application with "flutter run". You'll see the
+          // application has a blue toolbar. Then, without quitting the app, try
+          // changing the primarySwatch below to Colors.green and then invoke
+          // "hot reload" (press "r" in the console where you ran "flutter run",
+          // or simply save your changes to "hot reload" in a Flutter IDE).
+          // Notice that the counter didn't reset back to zero; the application
+          // is not restarted.
+          primarySwatch: Colors.indigo,
         ),
-        body: Center( // Lo ponemos en un contenedor
-          child: Text("Hola Mundo Que belleza"),
-        ),
-      )//const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+        home: Scaffold(
+            appBar: AppBar(
+              // NAVBAR DE LA APLICACIÓN
+              leading: Icon(Icons.arrow_back),
+              title: Text("Reto 2 - Platzi"),
+            ),
+            body: Center(
+              child: Stack(
+                children: <Widget>[
+                  Image.network(
+                    "https://www.xtrafondos.com/descargar.php?id=3376&resolucion=3840x2160",
+                    fit: BoxFit.cover,
+                    height: double.infinity,
+                  ),
+                  Center(
+                    child: Container(
+                        height: 50.0,
+                        color: Colors.black38,
+                        child: Center(
+                          child: Text("Esto es un texto :)",
+                              style: TextStyle(color: Colors.white)),
+                        )),
+                  ),
+                  // Expanded(
+                  //     child: TextButton(
+                  //   onPressed: null,
+                  //   child: Text("Soy un botón",
+                  //       style: TextStyle(color: Colors.white)),
+                  //   style: ButtonStyle(
+                  //       backgroundColor:
+                  //           MaterialStateProperty.all<Color>(Colors.blue)),
+                  // )),
+                ],
+              ),
+            )
+            // body: Center(
+            //   // Lo ponemos en un contenedor
+            //   child: Text(
+            //     "Hola Mundo Que belleza",
+            //     style:
+            //         TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),
+            //   ),
+            // ),
+            ) //const MyHomePage(title: 'Flutter Demo Home Page'),
+        );
   }
 }
 
