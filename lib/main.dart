@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'description_place.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,53 +23,20 @@ class MyApp extends StatelessWidget {
           // or simply save your changes to "hot reload" in a Flutter IDE).
           // Notice that the counter didn't reset back to zero; the application
           // is not restarted.
-          primarySwatch: Colors.indigo,
+          primarySwatch: Colors.blue,
         ),
         home: Scaffold(
-            appBar: AppBar(
-              // NAVBAR DE LA APLICACIÓN
-              leading: Icon(Icons.arrow_back),
-              title: Text("Reto 2 - Platzi"),
-            ),
-            body: Center(
-              child: Stack(
-                children: <Widget>[
-                  Image.network(
-                    "https://www.xtrafondos.com/descargar.php?id=3376&resolucion=3840x2160",
-                    fit: BoxFit.cover,
-                    height: double.infinity,
-                  ),
-                  Center(
-                    child: Container(
-                        height: 50.0,
-                        color: Colors.black38,
-                        child: Center(
-                          child: Text("Esto es un texto :)",
-                              style: TextStyle(color: Colors.white)),
-                        )),
-                  ),
-                  // Expanded(
-                  //     child: TextButton(
-                  //   onPressed: null,
-                  //   child: Text("Soy un botón",
-                  //       style: TextStyle(color: Colors.white)),
-                  //   style: ButtonStyle(
-                  //       backgroundColor:
-                  //           MaterialStateProperty.all<Color>(Colors.blue)),
-                  // )),
-                ],
-              ),
-            )
-            // body: Center(
-            //   // Lo ponemos en un contenedor
-            //   child: Text(
-            //     "Hola Mundo Que belleza",
-            //     style:
-            //         TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),
-            //   ),
-            // ),
-            ) //const MyHomePage(title: 'Flutter Demo Home Page'),
-        );
+          appBar: AppBar(
+            // NAVBAR DE LA APLICACIÓN
+            leading: Icon(Icons.arrow_back),
+            title: Text("Hola Flutter - Platzi"),
+          ),
+          body: new DescriptionPlace(
+            "Bahamas",
+            4,
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+          ),
+        ));
   }
 }
 
