@@ -9,7 +9,7 @@ class DescriptionPlace extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const marginTitle = 320.0;
+    const marginTitle = 20.0;
 
     final starHalf = Container( // medium star
       margin: const EdgeInsets.only(

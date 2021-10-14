@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_trips_app/widgets/review/review_list.dart';
 import 'description_place.dart';
 
 void main() {
@@ -26,17 +27,21 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: Scaffold(
-          appBar: AppBar(
-            // NAVBAR DE LA APLICACIÓN
-            leading: Icon(Icons.arrow_back),
-            title: Text("Hola Flutter - Platzi"),
-          ),
-          body: new DescriptionPlace(
-            "Bahamas",
-            4,
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
-          ),
-        ));
+            appBar: AppBar(
+              // NAVBAR DE LA APLICACIÓN
+              leading: Icon(Icons.arrow_back),
+              title: Text("Hola Flutter - Platzi"),
+            ),
+            body: Column(
+              children: <Widget>[
+                new DescriptionPlace(
+                  "Bahamas",
+                  4,
+                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+                ),
+                new ReviewList(),
+              ],
+            )));
   }
 }
 
