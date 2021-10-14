@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class DescriptionPlace extends StatelessWidget {
   String namePlace;
   int stars;
@@ -72,6 +71,7 @@ class DescriptionPlace extends StatelessWidget {
           child: Text(
             namePlace,
             style: const TextStyle(
+              fontFamily: "Lato",
               fontSize: 30.0,
               fontWeight: FontWeight.w900,
             ),
