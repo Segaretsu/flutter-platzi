@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trips_app/widgets/commons/ranking.dart';
+import 'package:platzi_trips_app/widgets/commons/rating.dart';
 
 class Review extends StatelessWidget {
   String pathImage = "assets/images/people.jpg";
@@ -38,7 +38,7 @@ class Review extends StatelessWidget {
                 color: Color(0xFFa3a5a7),
               ),
             ),
-            Ranking(4.0, const EdgeInsets.only(left: 1.0), 18.0)
+            Rating(4.0, const EdgeInsets.only(left: 1.0), 18.0)
           ],
         ));
 
