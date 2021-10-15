@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_trips_app/widgets/commons/ranking.dart';
 
 class Review extends StatelessWidget {
   String pathImage = "assets/images/people.jpg";
   String name = "Varuna Yasas";
   String details = "1 review, 5 photos";
+  double stars = 0;
   String comments = "There is an amazing place in Sri Lanka";
 
-  Review(this.pathImage, this.name, this.details, this.comments);
+  Review(this.pathImage, this.name, this.details, this.stars, this.comments);
 
   @override
   Widget build(BuildContext context) {
-
     final userComment = Container(
       margin: const EdgeInsets.only(left: 20.0),
       child: Text(
@@ -25,18 +26,21 @@ class Review extends StatelessWidget {
     );
 
     final userInfo = Container(
-      margin: const EdgeInsets.only(left: 20.0),
-      child: Text(
-        details,
-        textAlign: TextAlign.left,
-        style: const TextStyle(
-          fontFamily: "Lato",
-          fontSize: 13.0,
-          color: Color(0xFFa3a5a7),
-        ),
-      ),
-    );
-    
+        margin: const EdgeInsets.only(left: 20.0),
+        child: Row(
+          children: [
+            Text(
+              details,
+              textAlign: TextAlign.left,
+              style: const TextStyle(
+                fontFamily: "Lato",
+                fontSize: 13.0,
+                color: Color(0xFFa3a5a7),
+              ),
+            ),
+            Ranking(4.0, const EdgeInsets.only(left: 1.0), 18.0)
+          ],
+        ));
 
     final userName = Container(
       margin: const EdgeInsets.only(left: 20.0),
