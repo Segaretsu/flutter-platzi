@@ -9,9 +9,10 @@ class Rating extends StatelessWidget {
 
   Widget getStar(stars, index) {
     dynamic icon;
-    if (stars > index) {
+    if (stars >= index) {
       icon = Icon(Icons.star, color: const Color(0xFFf2C611), size: fontSize);
     } else {
+      // 3.5, 4 - 0.4 = 3.5
       if (stars >= index - 0.5) {
         icon = Icon(Icons.star_half,
             color: const Color(0xFFf2C611), size: fontSize);
@@ -35,7 +36,7 @@ class Rating extends StatelessWidget {
   }
 
   Widget getRanking(stars) {
-    List<Widget> listStars = List.generate(5, (index) => getStar(stars, index));
+    List<Widget> listStars = List.generate(5, (index) => getStar(stars, (index + 1)));
     return Row(
       children: listStars,
     );

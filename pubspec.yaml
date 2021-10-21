@@ -90,6 +90,7 @@ flutter:
 
   assets:
     - assets/images/people.jpg
+    - assets/images/cartagena_principal.png
 
   fonts:
     - family: Lato

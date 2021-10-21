@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_trips_app/widgets/commons/gradient/gradient_back.dart';
 import 'package:platzi_trips_app/widgets/review/review_list.dart';
 import 'description_place.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +14,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarBrightness: Brightness.light));
+
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
@@ -27,21 +34,33 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: Scaffold(
-            appBar: AppBar(
-              // NAVBAR DE LA APLICACIÓN
-              leading: Icon(Icons.arrow_back),
-              title: Text("Hola Flutter - Platzi"),
-            ),
-            body: Column(
-              children: <Widget>[
-                new DescriptionPlace(
-                  "Bahamas",
-                  4,
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
-                ),
-                new ReviewList(),
-              ],
-            )));
+          // appBar: AppBar(
+          //   // NAVBAR DE LA APLICACIÓN
+          //   leading: Icon(Icons.arrow_back),
+          //   title: Text("Hola Flutter - Platzi"),
+          // ),
+          body: Stack(
+            children: <Widget>[
+              ListView(
+                children: <Widget>[
+                  DescriptionPlace(
+                    "Cartagena",
+                    4,
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+                  ),
+                  ReviewList(),
+                ],
+              ),
+              GradientBack("Popular")
+            ],
+          ),
+          // body: Column(
+          //   children: <Widget>[
+          //     DescriptionPlace("Bahamas", 4, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",),
+          //     ReviewList(),
+          //   ],
+          // )
+        ));
   }
 }
 

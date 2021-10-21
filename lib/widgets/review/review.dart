@@ -38,7 +38,7 @@ class Review extends StatelessWidget {
                 color: Color(0xFFa3a5a7),
               ),
             ),
-            Rating(4.0, const EdgeInsets.only(left: 1.0), 18.0)
+            Rating(stars, const EdgeInsets.only(left: 1.0), 18.0)
           ],
         ));
 
