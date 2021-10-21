@@ -89,8 +89,7 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 
   assets:
-    - assets/images/people.jpg
-    - assets/images/cartagena_principal.png
+    - assets/images/
 
   fonts:
     - family: Lato
