@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_trips_app/widgets/buttons/button_purple.dart';
 class DescriptionPlace extends StatelessWidget {
   String namePlace;
   int stars;
@@ -92,9 +93,11 @@ class DescriptionPlace extends StatelessWidget {
     );
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         titleStars,
         description,
+        ButtonPurple("Navigate"),
       ],
     );
     // throw UnimplementedError();
